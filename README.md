@@ -8,6 +8,13 @@ Run:
 
 ```bash
 wrangler generate mailgun-cloudflare-worker https://github.com/bozdoz/mailgun-cloudflare-worker
+wrangler init
+```
+
+Add `webpack_config` to `wrangler.toml`:
+
+```toml
+webpack_config = "webpack.config.js"
 ```
 
 ### Development
