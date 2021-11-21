@@ -12,6 +12,7 @@ const OVERRIDES = {
   subject: process.env.APP_EMAIL_SUBJECT,
   text: process.env.APP_EMAIL_TEXT,
   html: process.env.APP_EMAIL_HTML,
+  'o:require-tls': 'yes',
 }
 
 // remove any empty overrides before spreading

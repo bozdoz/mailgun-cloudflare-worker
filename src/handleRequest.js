@@ -3,7 +3,16 @@ import sendMail from './sendMail'
 import validateFields from './validateFields'
 
 /** @type {(keyof Message)[]} */
-const FIELDS = ['to', 'from', 'cc', 'bcc', 'subject', 'text', 'html']
+const FIELDS = [
+  'to',
+  'from',
+  'cc',
+  'bcc',
+  'subject',
+  'text',
+  'html',
+  'h:Reply-To',
+]
 
 /**
  * Respond with a message indicating whether the email has been sent
