@@ -1,6 +1,6 @@
-# Mailjetgun Cloudflare Worker
+# Mailgun Cloudflare Worker
 
-### Can I Use as a Template?
+### Can I use this as a template?
 
 Yes!
 
@@ -13,9 +13,8 @@ wrangler generate mailgun-cloudflare-worker https://github.com/bozdoz/mailgun-cl
 ### Development
 
 1. install dependencies: `npm ci`
-2. define your environment variables (somehow):
-   - Using direnv: in a .envrc file: `cp .env-example .envrc`
-   - Just export the variables (see `.env-example`)!
+2. define your environment variables:
+   - Just `cp` the example file (`cp .env-example .env`) and fill in your information
 3. publish/test: `wrangler publish`
 
 ### Using
