@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "mailgun-cloudflare-worker",
+  "version": "1.0.0",
+  "description": "An implementation of the Mailgun API, using a Cloudflare Worker",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Benjamin DeLong <ben@bozdoz.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "webpack": "^5.64.2"
+  }
+}
