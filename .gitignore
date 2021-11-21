@@ -13,3 +13,6 @@ node_modules/
 # add environment variables here
 .env*
 !.env-example
+
+# maybe doesn't need wrangler.toml
+wrangler.toml

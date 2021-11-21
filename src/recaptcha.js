@@ -8,8 +8,8 @@
  * @property {string} hostname
  */
 
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET
-const RECAPTCHA_MINSCORE = Number(process.env.RECAPTCHA_MINSCORE || '0.5')
+const RECAPTCHA_SECRET = process.env.APP_RECAPTCHA_SECRET
+const RECAPTCHA_MINSCORE = Number(process.env.APP_RECAPTCHA_MINSCORE || '0.5')
 
 /**
  * Uses Google Recaptcha v3 to prevent spam from bots

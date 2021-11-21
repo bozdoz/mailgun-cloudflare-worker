@@ -58,7 +58,7 @@ async function handleRequest(request) {
       // JSON response
       'content-type': 'application/json;charset=UTF-8',
       // CORS
-      'Access-Control-Allow-Origin': process.env.ALLOWED_ORIGIN || '*',
+      'Access-Control-Allow-Origin': process.env.APP_ALLOWED_ORIGIN || '*',
       // caching
       Vary: 'Origin',
     },

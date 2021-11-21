@@ -1,15 +1,11 @@
 import recaptcha from './recaptcha'
 
-const RECAPTCHA_SECRET = process.env.RECAPTCHA_SECRET
+const RECAPTCHA_SECRET = process.env.APP_RECAPTCHA_SECRET
 
 /**
  * @param {Message & { token: string }} body
  */
 const validateFields = async (body) => {
-  if (!body.to || !body.from || (!body.text && !body.html)) {
-    throw new Error('to, from, text, and html fields are required!')
-  }
-
   if (RECAPTCHA_SECRET) {
     // secret means that google recaptcha has been setup
     // verify that the request is not from a bot
