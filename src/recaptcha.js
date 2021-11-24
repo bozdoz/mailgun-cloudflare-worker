@@ -5,6 +5,7 @@
  * @property {number} score
  * @property {string} action
  * @property {string} [challenge_ts] ISO formatted timestamp
+ * @property {string[]} [error-codes] errors
  * @property {string} hostname
  */
 
@@ -16,21 +17,28 @@ const RECAPTCHA_MINSCORE = Number(process.env.APP_RECAPTCHA_MINSCORE || '0.5')
  * @param {string} token
  */
 const recaptcha = async (token) => {
-  const data = {
-    secret: RECAPTCHA_SECRET,
-    response: token,
-  }
-
   /** @type {GoogleResponse} */
-  const resp = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
+  const resp = await fetch(
+    `https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET}&response=${token}`,
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
     },
-    body: JSON.stringify(data),
-  }).then((resp) => resp.json())
+  )
+    .then((resp) => {
+      return resp.json()
+    })
+    .catch((e) => {
+      console.error('recaptcha fail', e)
+    })
 
   const { success, score } = resp
+
+  if (!success) {
+    throw new Error(resp['error-codes'])
+  }
 
   return success && score > RECAPTCHA_MINSCORE
 }
